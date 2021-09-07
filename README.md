@@ -12,4 +12,4 @@ Boilerplate to start web app based SPT framework
 - If document root is in subpath, search "project_spt" and replace by your new subpath
 - If you use Apache, remember to enable Rewrite mode and edit htaccess for correct subpath
 - If you use nginx, remember to set root to public folder
-- Developer PHP source in php_modules
+- Enjoy developing PHP source in php_modules
