@@ -1,10 +1,9 @@
 {
-    "name": "smpleader/spt-examples",
+    "name": "smpleader/spt-boilerplate",
     "type": "project",
-    "description": "The examples showoff SPT Framework.",
+    "description": "The boilerplate to use SPT Framework with Webpack.",
     "keywords": [
-        "framework",
-        "spt"
+        "framework", "spt", "boilerplate"
     ],
     "license": "GPL-2.0-or-later",
     "require": {

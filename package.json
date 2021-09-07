@@ -1,0 +1,40 @@
+{
+  "name": "spt-boilerplate",
+  "version": "1.0.0",
+  "description": "Example to use Spt with webpack",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@tailwindcss/forms": "^0.3.3",
+    "autoprefixer": "^10.3.1",
+    "jquery": "^3.6.0",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "jquery-ui": "^1.12.1",
+    "laravel-mix": "^6.0.28",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.38.0",
+    "sass-loader": "^12.1.0"
+  },
+  "scripts": {
+    "build": "mix",
+    "watch": "mix watch",
+    "prod": "cross-env NODE_ENV=production npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smpleader/spt-boilerplate/"
+  },
+  "bugs": {
+    "url": "https://github.com/smpleader/spt-boilerplate/"
+  },
+  "homepage": "https://github.com/smpleader/spt-boilerplate/"
+}
