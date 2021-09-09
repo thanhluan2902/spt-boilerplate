@@ -42,7 +42,7 @@ const WorkList = () => {
                             <div className="mb-3 mr_left no_mr">
                                 <label className="form-label" htmlFor="exampleSelect">Sắp xếp</label>
                                 <select className="form-select input2" aria-label="Default select example">
-                                    <option selected>Tự động</option>
+                                    <option>Tự động</option>
                                     <option value={1}>A -&gt; Z</option>
                                     <option value={2}>Z -&gt; A</option>
                                 </select>
@@ -131,15 +131,15 @@ const WorkList = () => {
                         <nav aria-label="..." className="pagination_nav">
                             <ul className="pagination">
                                 <li className="page-item disabled">
-                                    <a className="page-link">Previous</a>
+                                    <a className="page-link" href="/saas">Previous</a>
                                 </li>
-                                <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                <li className="page-item"><a className="page-link" href="/fdgdfg">1</a></li>
                                 <li className="page-item active" aria-current="page">
-                                    <a className="page-link" href="#">2</a>
+                                    <a className="page-link" href="/sasd">2</a>
                                 </li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                <li className="page-item"><a className="page-link" href="/ds">3</a></li>
                                 <li className="page-item">
-                                    <a className="page-link" href="#">Next</a>
+                                    <a className="page-link" href="/sdf">Next</a>
                                 </li>
                             </ul>
                         </nav>
