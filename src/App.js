@@ -24,7 +24,7 @@ function App() {
             main: () => <AddWork />
         },
         {
-            path: '/edit-work',
+            path: '/edit-work/:id',
             exact: false,
             main: ({ match }) => <EditWork match={match} />
         }

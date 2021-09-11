@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './EditWork.css';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
+import { connect } from 'react-redux';
+import * as action from './../../actions/index';
 
-const EditWork = ({ match }) => {
+const EditWork = ({ match , onRequestWorkEditApi , workEdit }) => {
     const [status, setStatus] = useState(false);
 
-    console.log(match);
+    var id = match.params.id;
+    useEffect(() => {
+        async function fetchWork() {
+            onRequestWorkEditApi(id);
+        }
+        fetchWork();
+    }, []);
+
+    console.log(workEdit);
 
     return (
         <div className={ status ? "right_wrap no_mr" : "right_wrap" }>
@@ -21,7 +31,7 @@ const EditWork = ({ match }) => {
                                 <input type="text" className="form-control" name="email" id="exampleEmail" defaultValue="Tiêu đề" />
                             </div>
                             <div className="col uploadButton">
-                                <img className="image" src="./assets/images/logo512.png" alt="imay" />
+                                <img className="image" src="./../assets/images/logo512.png" alt="imay" />
                                 <input type="file" id="upload" hidden />
                                 <label htmlFor="upload" className="label_upload">Chọn ảnh</label>
                             </div>
@@ -48,4 +58,18 @@ const EditWork = ({ match }) => {
     );
 }
 
-export default EditWork;
+const mapStateToProps = state => {
+    return {
+        workEdit: state.workEdit,
+    };
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onRequestWorkEditApi: (id) => {
+            dispatch(action.actRequesthWorkEditApi(id));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditWork);
