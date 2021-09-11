@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React , { useState , useEffect  } from 'react';
 import WorkItem from './WorkItem';
 import Filter from '../filter/Filter';
 import Footer from '../footer/Footer';
@@ -7,6 +7,12 @@ import './WorkList.css';
 
 const WorkList = () => {
     const [status , setStatus] = useState(false);
+    useEffect(() => {
+        // effect
+        return () => {
+            // cleanup
+        };
+    }, [status]);
 
     return (
         <div className={ status ? "right_wrap no_mr" : "right_wrap" }>

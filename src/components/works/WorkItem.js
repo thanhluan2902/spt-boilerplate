@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const WorkItem = ({ work, onDeleteWork, index }) => {
+const WorkItem = () => {
     return (
         <tr className="odd">
             <td className="dtr-control sorting_1" tabIndex={0}>Gecko</td>
