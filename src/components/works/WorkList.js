@@ -1,22 +1,34 @@
-import React , { useState , useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import WorkItem from './WorkItem';
 import Filter from '../filter/Filter';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import './WorkList.css';
+import axios  from 'axios';
 
 const WorkList = () => {
-    const [status , setStatus] = useState(false);
+    const [status, setStatus] = useState(false);
     useEffect(() => {
-        // effect
+        axios.get('http://localhost:3333/documents')
+            .then(function (response) {
+                // handle success
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
         return () => {
             // cleanup
         };
-    }, [status]);
+    }, []);
 
     return (
-        <div className={ status ? "right_wrap no_mr" : "right_wrap" }>
-            <Header onToggleMargin={ () => { setStatus(!status)} }/>
+        <div className={status ? "right_wrap no_mr" : "right_wrap"}>
+            <Header onToggleMargin={() => { setStatus(!status) }} />
             <div className="container main_content">
                 <div className="row">
                     <Filter />
