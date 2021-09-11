@@ -1,0 +1,34 @@
+.main_content {
+  width: 100%;
+  padding: 20px 15px 30px 15px;
+}
+.trend {
+  z-index: 99;
+}
+
+.card-body {
+  padding: 0.5rem;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  justify-items: center;
+  list-style: none;
+  margin-bottom: 0 !important;
+  justify-content: flex-end;
+}
+
+.th_sort {
+  align-items: center;
+  line-height: 100%;
+}
+.th_sort i {
+  float: right;
+  cursor: pointer;
+  font-size: 15px;
+  color: gray;
+}
+.images {
+  width: 40px !important;
+  height: 40px !important;
+}
