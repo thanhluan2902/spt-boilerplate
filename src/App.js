@@ -1,9 +1,8 @@
 import './App.css';
 import NavBar from './components/navBar/NavBar';
-// import WorkList from './components/works/WorkList';
-// import EditWork from './components/works/EditWork';
-// import AddWork from './components/works/AddWork';
-import routes from './Route';
+import WorkList from './components/works/WorkList';
+import EditWork from './components/works/EditWork';
+import AddWork from './components/works/AddWork';
 
 import {
     BrowserRouter as Router,
@@ -11,30 +10,42 @@ import {
     Route
 } from "react-router-dom";
 
-function App({ routes }) {
-    const loadRoute = () => {
-        routes.map((route) => {
-            <Route exact={route.exact} path={route.path}>
-                { route.main }
-            </Route>
-        })
-    }
+function App() {
+
+    const routes = [
+        {
+            path: '/',
+            exact: true,
+            main: ({ match }) => <WorkList match={match} />
+        },
+        {
+            path: '/add-work',
+            exact: false,
+            main: () => <AddWork />
+        },
+        {
+            path: '/edit-work',
+            exact: false,
+            main: ({ match }) => <EditWork match={match} />
+        }
+    ];
 
     return (
         <Router>
             <div className="themed-container wrap">
                 <NavBar />
                 <Switch>
-                    {/* <Route exact path="/">
-                        <WorkList />
-                    </Route>
-                    <Route path="/edit-work">
-                        <EditWork />
-                    </Route>
-                    <Route path="/create-work">
-                        <AddWork />
-                    </Route> */}
-                    { loadRoute }
+                    {
+                        routes.map((route, index) => {
+                            return <Route
+                                exact={route.exact}
+                                path={route.path}
+                                key={index}
+                            >
+                                {route.main}
+                            </Route>
+                        })
+                    }
 
                 </Switch>
             </div>

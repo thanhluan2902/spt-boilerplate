@@ -12,7 +12,7 @@ const WorkItem = ({ work }) => {
             <td>
                 <Link to="/"><button type="button" className="btn btn-block btn-danger btn-sm"><i className="fa fa-trash" aria-hidden="true" /></button></Link>
                 &nbsp;|&nbsp;
-                <Link to="/edit-work"><button type="button" className="btn btn-block btn-success btn-sm"><i className="fa fa-pencil" aria-hidden="true" /></button></Link>
+                <Link to={`/edit-work/${work.homework_item_id}`}><button type="button" className="btn btn-block btn-success btn-sm"><i className="fa fa-pencil" aria-hidden="true" /></button></Link>
             </td>
         </tr>
     );

@@ -5,7 +5,7 @@ import AddWork from './components/works/AddWork';
 const routes = [
     {
         path : '/',
-        exact : false,
+        exact : true,
         main : () => <WorkList />
     },
     {
@@ -17,8 +17,7 @@ const routes = [
         path : '/edit-work',
         exact : false,
         main : ({match}) => <EditWork match={match} />
-    },
-
+    }
 ];
 
 export default routes;
