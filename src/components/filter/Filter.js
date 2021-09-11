@@ -1,17 +1,22 @@
-import React from 'react';
+import React , { useState } from 'react';
 import './Filter.css'
 
 const Filter = () => {
+    const [type , setType] = useState('text');
+    const handleFocusChange = () => {
+        setType('date');
+    }
+
     return (
         <div className="col-xxl-10 col-xl-10 col-lg-12 col-md-12 col-sm-12  wrap_form">
             <div className="mb-2 order_2">
                 <input type="text" className="input" name="date" placeholder="Search ..." />
             </div>
             <div className="mb-2">
-                <input type="text" className="input" name="date" placeholder="Từ ngày: " onfocus="(this.type='date')" />
+                <input type={ type } className="input" name="date" placeholder="Từ ngày: " onFocus={handleFocusChange} />
             </div>
             <div className="mb-2">
-                <input type="text" className="input" name="date" placeholder="Đến ngày: " onfocus="(this.type='date')" />
+                <input type={ type } className="input" name="date" placeholder="Đến ngày: " onFocus={handleFocusChange} />
             </div>
             <div className="mb-2">
                 <select className="form-select input_select" aria-label="Default select example">
