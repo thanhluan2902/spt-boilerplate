@@ -7,15 +7,23 @@ import * as action from './../../actions/index';
 
 const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
     const [status, setStatus] = useState(false);
-    const [workItem, setWorkItem] = useState();
+    const [workItem, setWorkItem] = useState({});
 
     var id = match.params.id;
     useEffect(() => {
         async function fetchWork() {
             onRequestWorkEditApi(id);
+            setWorkItem(workEdit);
         }
         fetchWork();
     }, []);
+
+    useEffect(() => {
+        setWorkItem(workEdit);
+        console.log('item' , workItem.title);
+
+    }, [workEdit]);
+
 
     const handleChange = (e) => {
         const target = e.target;
@@ -45,7 +53,7 @@ const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
                                     type="text"
                                     className="form-control"
                                     name="title"
-                                    value={workEdit.title}
+                                    value={workItem.title}
                                     onChange={handleChange}
                                 />
                             </div>
@@ -58,7 +66,7 @@ const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
                                 <input
                                     className="form-control"
                                     type="text"
-                                    value={workEdit.amount}
+                                    value={workItem.amount}
                                     name="amount"
                                     onChange={handleChange}
                                 />
