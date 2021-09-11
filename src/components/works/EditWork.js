@@ -3,8 +3,10 @@ import './EditWork.css';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 
-const EditWork = () => {
+const EditWork = ({ match }) => {
     const [status, setStatus] = useState(false);
+
+    console.log(match);
 
     return (
         <div className={ status ? "right_wrap no_mr" : "right_wrap" }>

@@ -8,7 +8,8 @@ import './WorkList.css';
 import { connect } from 'react-redux';
 import * as action from './../../actions/index';
 
-const WorkList = ({ works , onRequestWorkApi }) => {
+
+const WorkList = ({ works, onRequestWorkApi }) => {
 
     const [status, setStatus] = useState(false);
     useEffect(() => {
