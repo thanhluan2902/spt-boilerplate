@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import WorkItem from './WorkItem';
 import Filter from '../filter/Filter';
 import Footer from '../footer/Footer';
@@ -6,9 +6,11 @@ import Header from '../header/Header';
 import './WorkList.css';
 
 const WorkList = () => {
+    const [status , setStatus] = useState(false);
+    
     return (
-        <div className="right_wrap">
-            <Header />
+        <div className={ status ? "right_wrap no_mr" : "right_wrap" }>
+            <Header onToggleMargin={ () => { setStatus(!status)} }/>
             <div className="container main_content">
                 <div className="row">
                     <Filter />

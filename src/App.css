@@ -37,7 +37,7 @@ a {
   box-sizing: border-box;
   overflow: auto;
   position: relative;
-  min-height: 721px;
+  min-height: 802px;
 }
 .active {
   display: block !important;
@@ -46,6 +46,9 @@ a {
 .no_mr {
   width: 100% !important;
   margin-left: 0 !important;
+}
+.mr_left10 {
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 1200px) {

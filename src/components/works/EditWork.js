@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './EditWork.css';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 
 const EditWork = () => {
+    const [status, setStatus] = useState(false);
+
     return (
-        <div className="right_wrap">
-             <Header />
+        <div className={ status ? "right_wrap no_mr" : "right_wrap" }>
+            <Header onToggleMargin={() => { setStatus(!status) }} />
             <div className="container main_content">
                 <div className="row">
                     <div className="col-3">
@@ -32,7 +34,7 @@ const EditWork = () => {
                                 </select>
                             </div>
                             <button type="button" className="btn btn-primary btn-block">Lưu thay đổi</button>
-                            <button type="button" className="btn btn-secondary btn-block">Hủy bỏ</button>
+                            <button type="button" className="btn btn-secondary btn-block mr_left10">Hủy bỏ</button>
                         </form>
                     </div>
                     <div className="col-3">
