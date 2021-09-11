@@ -5,6 +5,10 @@ import Header from '../header/Header';
 import { connect } from 'react-redux';
 import * as action from './../../actions/index';
 
+function formatDate() {
+    
+}
+
 const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
     const [status, setStatus] = useState(false);
     const [workItem, setWorkItem] = useState({});
@@ -20,22 +24,23 @@ const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
 
     useEffect(() => {
         setWorkItem(workEdit);
-        console.log('item' , workItem.title);
-
     }, [workEdit]);
 
+    const dateTime = formatDate();
 
     const handleChange = (e) => {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        const formContent = {
-            [name]: value,
-        }
-        setWorkItem(formContent);
+        setWorkItem({
+            ...workItem,
+            // created_at : ,
+            [name] : value,
+        });
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(workItem);
     }
 
@@ -78,7 +83,7 @@ const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
                                     <option selected="true" value={3}>Hiện</option>
                                 </select>
                             </div>
-                            <button type="button" className="btn btn-primary btn-block">Lưu thay đổi</button>
+                            <button type="submit" className="btn btn-primary btn-block">Lưu thay đổi</button>
                             <button type="button" className="btn btn-secondary btn-block mr_left10">Hủy bỏ</button>
                         </form>
                     </div>
