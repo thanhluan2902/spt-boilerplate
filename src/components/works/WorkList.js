@@ -3,16 +3,19 @@ import WorkItem from './WorkItem';
 import Filter from '../filter/Filter';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
+import Pagination from './../pagination/Pagination';
 import './WorkList.css';
-import axios  from 'axios';
+import axios from 'axios';
 
 const WorkList = () => {
     const [status, setStatus] = useState(false);
+    const [works, setWorks] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3333/documents')
+        async function fetchWork() {
+            axios.get('http://localhost:3333/works')
             .then(function (response) {
-                // handle success
-                console.log(response.data);
+                const data = response.data;
+                setWorks(data);
             })
             .catch(function (error) {
                 // handle error
@@ -21,9 +24,8 @@ const WorkList = () => {
             .then(function () {
                 // always executed
             });
-        return () => {
-            // cleanup
-        };
+        }
+        fetchWork();
     }, []);
 
     return (
@@ -56,6 +58,10 @@ const WorkList = () => {
                                                             Ngày tạo
                                                             <i className="fa fa-filter" aria-hidden="true" />
                                                         </th>
+                                                        <th className="sorting th_sort th1" tabIndex={0} aria-controls="example2" rowSpan={1} colSpan={1} aria-label="Platform(s): activate to sort column ascending">
+                                                            Số lượng
+                                                            <i className="fa fa-filter" aria-hidden="true" />
+                                                        </th>
                                                         <th className="sorting th_sort th" tabIndex={0} aria-controls="example2" rowSpan={1} colSpan={1} aria-label="Engine version: activate to sort column ascending">
                                                             Trạng thái
                                                         </th>
@@ -65,29 +71,17 @@ const WorkList = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <WorkItem />
-                                                    <WorkItem />
-                                                    <WorkItem />
+                                                    {
+                                                        works.map((work) => {
+                                                            return <WorkItem work={work} key={work.homework_item_id} />
+                                                        })
+                                                    }
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-sm-12 col-md-12">
-                                            <div className="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                                                <ul className="pagination">
-                                                    <li className="paginate_button page-item previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx={0} tabIndex={0} className="page-link">Previous</a>
-                                                    </li>
-                                                    <li className="paginate_button page-item active"><a href="#" aria-controls="example2" data-dt-idx={1} tabIndex={0} className="page-link">1</a></li>
-                                                    <li className="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx={2} tabIndex={0} className="page-link">2</a></li>
-                                                    <li className="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx={3} tabIndex={0} className="page-link">3</a></li>
-                                                    <li className="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx={4} tabIndex={0} className="page-link">4</a></li>
-                                                    <li className="paginate_button page-item th"><a href="#" aria-controls="example2" data-dt-idx={5} tabIndex={0} className="page-link">5</a></li>
-                                                    <li className="paginate_button page-item th"><a href="#" aria-controls="example2" data-dt-idx={6} tabIndex={0} className="page-link">6</a></li>
-                                                    <li className="paginate_button page-item next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx={7} tabIndex={0} className="page-link">Next</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        <Pagination />
                                     </div>
                                 </div>
                             </div>

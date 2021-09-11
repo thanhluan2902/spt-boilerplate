@@ -1,82 +1,124 @@
 {
-    "documents": [
+    "works": [
         {
-            "id": 1,
-            "name": "English 1",
-            "image": "aaa.jpg",
-            "workspace": "Internal",
-            "category": "Status",
-            "tag": "inbox",
-            "created_at": "08/09/2021",
-            "contact": "thanhluan",
-            "owner": "odobot.com",
-            "type": "file"
+            "homework_item_id": 27,
+            "title": "Vệ sinh thảm ",
+            "icon": "/2020/10/icons8-carpet-cleaning-600.png",
+            "amount": "10000.00",
+            "created_at": "2020-07-15 11:03:32",
+            "created_by": 0,
+            "modified_at": "2020-07-15 11:03:32",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
         },
         {
-            "id": 2,
-            "name": "English 2",
-            "image": "aaa.jpg",
-            "workspace": "Internal",
-            "category": "Status",
-            "tag": "inbox",
-            "created_at": "08/09/2021",
-            "contact": "thanhluan",
-            "owner": "odobot.com",
-            "type": "file"
+            "homework_item_id": 28,
+            "title": "Vệ sinh tủ giầy",
+            "icon": "/2020/10/icons8-bureau-600.png",
+            "amount": "15000.00",
+            "created_at": "2020-07-15 11:03:32",
+            "created_by": 0,
+            "modified_at": "2020-07-15 11:03:32",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
         },
         {
-            "name": "English 3",
-            "image": "aaa.jpg",
-            "category": "Status",
-            "contact": "thanhluan",
-            "owner": "odoobot.com.vn",
-            "workspace": "Internal",
-            "tag": "Inbox",
-            "created_at": "08/09/2021",
-            "type": "file",
-            "id": 3
-        }
-    ],
-    "workspaces": [
-        {
-            "id": 1,
-            "name": "English 3",
-            "image": "aaa.jpg",
-            "category": "Status",
-            "write_group": "None",
-            "read_group": "None"
+            "homework_item_id": 29,
+            "title": "Vệ sinh rèm",
+            "icon": "/2020/10/icons8-jalousie-600.png",
+            "amount": "15000.00",
+            "created_at": "2020-10-16 13:17:43",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:17:43",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
         },
         {
-            "id": 1,
-            "name": "English 3",
-            "image": "aaa.jpg",
-            "category": "Status",
-            "write_group": "None",
-            "read_group": "None"
+            "homework_item_id": 30,
+            "title": "Vệ sinh quạt",
+            "icon": "/2020/10/icons8-fan-600.png",
+            "amount": "10000.00",
+            "created_at": "2020-10-16 13:19:56",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:19:56",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
         },
         {
-            "id": 1,
-            "name": "English 3",
-            "image": "aaa.jpg",
-            "category": "Status",
-            "write_group": "None",
-            "read_group": "None"
+            "homework_item_id": 31,
+            "title": "Vệ sinh lò vi sóng",
+            "icon": "/2020/10/icons8-microwave-600.png",
+            "amount": "10000.00",
+            "created_at": "2020-10-16 13:21:15",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:21:15",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
         },
         {
-            "id": 1,
-            "name": "English 3",
-            "image": "aaa.jpg",
-            "category": "Status",
-            "write_group": "None",
-            "read_group": "None"
+            "homework_item_id": 32,
+            "title": "Vệ sinh tủ lạnh",
+            "icon": "/2020/10/icons8-fridge-600-1.png",
+            "amount": "10000.00",
+            "created_at": "2020-10-16 13:22:21",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:22:21",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
         },
         {
-            "id": 1,
-            "name": "English 3",
-            "image": "aaa.jpg",
-            "category": "Status",
-            "write_group": "None",
-            "read_group": "None"
+            "homework_item_id": 33,
+            "title": "Vệ sinh lưới lọc",
+            "icon": "/2020/10/icons8-air-quality-600.png",
+            "amount": "10000.00",
+            "created_at": "2020-10-16 13:23:17",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:23:17",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
+        },
+        {
+            "homework_item_id": 34,
+            "title": "Quét mạng nhện",
+            "icon": "/2020/10/icons8-duster-600.png",
+            "amount": "10000.00",
+            "created_at": "2020-10-16 13:24:45",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:24:45",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
+        },
+        {
+            "homework_item_id": 35,
+            "title": "Dọn tủ quần áo",
+            "icon": "/2020/10/icons8-closet-600.png",
+            "amount": "10000.00",
+            "created_at": "2020-10-16 13:42:50",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:42:50",
+            "modified_by": 0,
+            "active": 1,
+            "type": 3
+        },
+        {
+            "homework_item_id": 36,
+            "title": "Trông em",
+            "icon": "/2020/10/icons8-children-600.png",
+            "amount": "15000.00",
+            "created_at": "2020-10-16 13:43:45",
+            "created_by": 0,
+            "modified_at": "2020-10-16 13:43:45",
+            "modified_by": 0,
+            "active": 1,
+            "type": 2
         }
     ]
 }
