@@ -25,7 +25,7 @@ const WorkList = ({ works, onRequestWorkApi }) => {
             <Header onToggleMargin={() => { setStatus(!status) }} />
             <div className="container main_content">
                 <div className="row">
-                    <Filter />
+                    <Filter url={"/add-work"} />
                     <div className="col-12">
                         <div className="card" style={{ marginBottom: '50px' }}>
                             <div className="card-body">

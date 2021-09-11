@@ -16,8 +16,6 @@ const EditWork = ({ match , onRequestWorkEditApi , workEdit }) => {
         fetchWork();
     }, []);
 
-    console.log(workEdit);
-
     return (
         <div className={ status ? "right_wrap no_mr" : "right_wrap" }>
             <Header onToggleMargin={() => { setStatus(!status) }} />
@@ -28,21 +26,21 @@ const EditWork = ({ match , onRequestWorkEditApi , workEdit }) => {
                     <div className="col-12">
                         <form className="mr_bot50">
                             <div className="col">
-                                <input type="text" className="form-control" name="email" id="exampleEmail" defaultValue="Tiêu đề" />
+                                <input type="text" className="form-control" name="email" id="exampleEmail" defaultValue={ workEdit.title } />
                             </div>
                             <div className="col uploadButton">
-                                <img className="image" src="./../assets/images/logo512.png" alt="imay" />
+                                <img className="image" src="./../../assets/images/logo512.png" alt="imay" />
                                 <input type="file" id="upload" hidden />
                                 <label htmlFor="upload" className="label_upload">Chọn ảnh</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" type="text" defaultValue={100} name="password" id="examplePassword" />
+                                <input className="form-control" type="text" defaultValue={ workEdit.amount } name="password" id="examplePassword" />
                             </div>
                             <br />
                             <div className="col mr_bt">
                                 <select className="form-select" aria-label="Default select example">
                                     <option value={2}>Ẩn</option>
-                                    <option value={3}>Hiện</option>
+                                    <option selected="true" value={3}>Hiện</option>
                                 </select>
                             </div>
                             <button type="button" className="btn btn-primary btn-block">Lưu thay đổi</button>

@@ -1,7 +1,13 @@
 import React , { useState } from 'react';
 import './Filter.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Routem,
+    Link
+} from "react-router-dom";
 
-const Filter = () => {
+const Filter = ({ url }) => {
     const [type , setType] = useState('text');
     const handleFocusChange = () => {
         setType('date');
@@ -27,7 +33,7 @@ const Filter = () => {
             </div>
             <button type="button" className="btn btn-primary btn-block  btn_common order_3"><i className="fa fa-search" aria-hidden="true" /></button>
             <button type="button" className="btn btn-primary btn-block btn_common order_4"><i className="fa fa-refresh" aria-hidden="true" /></button>
-            <a href="workAdd.html"><button type="button" className="btn btn-primary btn-block btn_common order_4"><i className="fa fa-plus" aria-hidden="true" /></button></a>
+            <Link to={ url }><button type="button" className="btn btn-primary btn-block btn_common order_4"><i className="fa fa-plus" aria-hidden="true" /></button></Link>
         </div>
     );
 }
