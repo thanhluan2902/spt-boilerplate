@@ -5,17 +5,14 @@ export const actRequesthWorkApi = () => {
     return (dispatch) => {
         return api.getWorkAll().then(function (response) {
                 const data = response.data;
+                dispatch(actFectchWorkApi(data));
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
-            .then(function () {
-                // always executed
-            });
     }
 }
-export const actFectchWorkApi = () => {
+export const actFectchWorkApi = (works) => {
     return {
         type: types.FETCH_WORK,
         works

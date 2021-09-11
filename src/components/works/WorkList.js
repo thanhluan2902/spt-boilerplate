@@ -5,28 +5,19 @@ import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import Pagination from './../pagination/Pagination';
 import './WorkList.css';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import * as action from './../../actions/index';
 
-const WorkList = () => {
+const WorkList = ({ works , onRequestWorkApi }) => {
+
     const [status, setStatus] = useState(false);
-    const [works, setWorks] = useState([]);
     useEffect(() => {
         async function fetchWork() {
-            axios.get('http://localhost:3333/works')
-            .then(function (response) {
-                const data = response.data;
-                setWorks(data);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
+            onRequestWorkApi();
         }
         fetchWork();
     }, []);
+
 
     return (
         <div className={status ? "right_wrap no_mr" : "right_wrap"}>
@@ -72,9 +63,9 @@ const WorkList = () => {
                                                 </thead>
                                                 <tbody>
                                                     {
-                                                        works.map((work) => {
+                                                        works ? works.map((work) => {
                                                             return <WorkItem work={work} key={work.homework_item_id} />
-                                                        })
+                                                        }) : []
                                                     }
                                                 </tbody>
                                             </table>
@@ -94,4 +85,18 @@ const WorkList = () => {
     );
 }
 
-export default WorkList;
+const mapStateToProps = state => {
+    return {
+        works: state.works,
+    };
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onRequestWorkApi: () => {
+            dispatch(action.actRequesthWorkApi());
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WorkList);
