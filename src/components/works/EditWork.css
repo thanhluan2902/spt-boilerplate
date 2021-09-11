@@ -1,0 +1,42 @@
+.uploadButton {
+  position: relative;
+}
+.uploadButton .input_hide {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+.labelUpload {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid blue;
+  cursor: pointer;
+}
+label {
+  font-weight: 500;
+}
+.mr_bot50 {
+  margin-bottom: 50px;
+}
+.image {
+  max-width: 200px;
+}
+.image_edit {
+  max-width: 200px;
+  margin: 0 auto;
+}
+.mr_bt {
+  margin-bottom: 20px;
+}
+
+.label_upload {
+  display: inline-block;
+  background-color: #0069d9;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
