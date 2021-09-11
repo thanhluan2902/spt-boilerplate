@@ -1,0 +1,99 @@
+@media only screen and (max-width: 1200px) {
+    .form1 {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+  @media only screen and (max-width: 1115px) {
+    .right_wrap {
+      position: relative;
+      width: 100%;
+      background-color: #ffffff;
+      min-height: 721px;
+      top: 0;
+      margin-left: 0px;
+    }
+    .container {
+      max-width: none;
+    }
+  }
+  @media only screen and (max-width: 1114px) {
+    .wrap_form {
+      margin: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .btn_common {
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .wrap_form {
+      margin: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .btn_common {
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .dataTables_info {
+      text-align: center !important;
+      margin-bottom: 10px;
+    }
+    .pagination {
+      display: flex;
+      padding-left: 0;
+      justify-items: center;
+      list-style: none;
+      margin-bottom: 0 !important;
+      justify-content: center;
+    }
+  }
+  
+  @media only screen and (max-width: 710px) {
+    .th1 {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .th {
+      display: none;
+    }
+    .order_2 {
+      order: 2;
+    }
+    .order_3 {
+      order: 3;
+    }
+    .order_4 {
+      order: 4;
+    }
+  }
+  @media only screen and (max-width: 526px) {
+    .mb-2 {
+      max-width: 100%;
+      width: 100%;
+      margin-right: 0;
+    }
+    .input {
+      width: 100% !important;
+    }
+    .order_2 {
+      order: 0;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .p_text {
+      display: none;
+    }
+    .card-body {
+      flex: 1 1 auto;
+      padding: 0rem 0rem 1rem 0;
+    }
+  }

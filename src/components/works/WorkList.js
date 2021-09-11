@@ -1,4 +1,6 @@
 import React from 'react';
+import WorkItem from './WorkItem';
+import Filter from '../filter/Filter';
 
 const WorkList = () => {
     return (
@@ -11,44 +13,11 @@ const WorkList = () => {
             </div>
             <div className="container main_content">
                 <div className="row">
-                    <div className="col-xxl-8 col-xl-8 col-lg-12 col-md-12 col-sm-12  wrap_form">
-                        <div className="mb-3">
-                            <label className="form-label" htmlFor="examplePassword">Từ ngày</label>
-                            <input type="date" className="input" name="date" placeholder="date placeholder" />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label" htmlFor="exampleDatetime">Đến ngày</label>
-                            <input type="date" className="input" name="date" placeholder="date placeholder" />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label" htmlFor="exampleSelect">Trạng thái</label>
-                            <select className="form-select input select-ip" aria-label="Default select example">
-                                <option value={1}>Ẩn</option>
-                                <option value={2}>Đăng</option>
-                            </select>
-                        </div>
-                        <button type="button" className="btn btn-primary btn-block  btn_common">Tìm kiếm</button>
-                        <button type="button" className="btn btn-primary btn-block btn_common">Làm mới</button>
-                    </div>
-                    <div className="col-xxl-4 col-xl-4 col-lg-12">
-                        <form className="form1 form2">
-                            <div className="mb-3">
-                                <label className="form-label" htmlFor="exampleSelect">Giới hạn</label>
-                                <select className="form-select input2" aria-label="Default select example">
-                                    <option value={1}>25</option>
-                                    <option value={2}>50</option>
-                                </select>
-                            </div>
-                            <div className="mb-3 mr_left no_mr">
-                                <label className="form-label" htmlFor="exampleSelect">Sắp xếp</label>
-                                <select className="form-select input2" aria-label="Default select example">
-                                    <option>Tự động</option>
-                                    <option value={1}>A -&gt; Z</option>
-                                    <option value={2}>Z -&gt; A</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
+
+                    {/* ------- Filter ------- */}
+                    <Filter />
+                    {/* ------- End Filter ------- */}
+
                     <div className="col-12">
                         <div className="card" style={{ fontSize: '100%' }}>
                             <div className="card-header">
@@ -84,42 +53,9 @@ const WorkList = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>183</td>
-                                            <td>Đám cưới trong mơ</td>
-                                            <td><img className="image2" src="./assets/images/logo512.png" alt="logo" /></td>
-                                            <td><span className="tag tag-success">Approved</span></td>
-                                            <td>22-12-2021 14:00:00</td>
-                                            <td>Ẩn</td>
-                                            <td className="mw-50">
-                                                <button type="button" className="btn btn-block btn-danger btn-sm"><i className="fa fa-trash" aria-hidden="true" /></button>
-                                                |
-                                                <button type="button" className="btn btn-block btn-success btn-sm"><i className="fa fa-pencil-square-o" aria-hidden="true" /></button>
-                                            </td></tr>
-                                        <tr>
-                                            <td>183</td>
-                                            <td>Đám cưới trong mơ</td>
-                                            <td><img className="image2" src="./assets/images/logo512.png" alt="logo" /></td>
-                                            <td><span className="tag tag-success">Approved</span></td>
-                                            <td>22-12-2021 14:00:00</td>
-                                            <td>Ẩn</td>
-                                            <td className="mw-50">
-                                                <button type="button" className="btn btn-block btn-danger btn-sm"><i className="fa fa-trash" aria-hidden="true" /></button>
-                                                |
-                                                <button type="button" className="btn btn-block btn-success btn-sm"><i className="fa fa-pencil-square-o" aria-hidden="true" /></button>
-                                            </td></tr>
-                                        <tr>
-                                            <td>183</td>
-                                            <td>Đám cưới trong mơ</td>
-                                            <td><img className="image2" src="./assets/images/logo512.png" alt="logo" /></td>
-                                            <td><span className="tag tag-success">Approved</span></td>
-                                            <td>22-12-2021 14:00:00</td>
-                                            <td>Ẩn</td>
-                                            <td className="mw-50">
-                                                <button type="button" className="btn btn-block btn-danger btn-sm"><i className="fa fa-trash" aria-hidden="true" /></button>
-                                                |
-                                                <button type="button" className="btn btn-block btn-success btn-sm"><i className="fa fa-pencil-square-o" aria-hidden="true" /></button>
-                                            </td></tr>
+                                        <WorkItem />
+                                        <WorkItem />
+                                        <WorkItem />
                                     </tbody>
                                 </table>
                             </div>

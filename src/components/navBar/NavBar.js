@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import './NavBar.css';
 import classnames from 'classnames';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 
@@ -20,7 +19,7 @@ const NavBar = () => {
     }
 
     return (
-        <div className="noPadding navBar" id="bar">
+        <div className="navbar_left" id="bar">
             <div className="logo">
                 <img src="./assets/images/AdminLTELogo.png" className="img_ad" alt="./logo512.png" />
                 <span>FNOTE - PROJECT</span>
@@ -98,7 +97,7 @@ const NavBar = () => {
                         Danh sách việc nhà
                     </div>
                 </Link>
-                <Link to="/">
+                <Link to="/create-work">
                     <div
                         className={classnames({ "evnt-item item activeItem": activeItem === '4', "evnt-item item": activeItem !== '4' })}
                         onClick={() => toggleItem('4')}

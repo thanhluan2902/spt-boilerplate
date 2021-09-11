@@ -1,0 +1,27 @@
+.wrap_form {
+  margin: 10px 0;
+  display: flex;
+}
+
+.mb-2 {
+  margin-right: 10px;
+}
+.input {
+  min-height: 38px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding-left: 9px;
+}
+.btn_common {
+  max-height: 38px;
+  margin-left: 10px;
+  min-width: 50px;
+  box-sizing: border-box !important;
+}
+.input_select {
+  min-width: 107.45px;
+  height: 38px;
+}
+.main_content>a:hover {
+    color: white !important;
+}

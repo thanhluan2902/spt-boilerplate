@@ -1,0 +1,21 @@
+.right_wrap {
+  position: relative;
+  width: calc(100% - 232px);
+  background-color: #ffffff;
+  min-height: 721px;
+  top: 0;
+  margin-left: 232px;
+  transition: all 0.3s ease-in-out;
+}
+.headding {
+  padding: 19px 15px;
+  text-align: center;
+  position: relative;
+}
+.headding h1 {
+  font-size: 18px;
+}
+.headding h1 i {
+  position: absolute;
+  left: 15px;
+}
