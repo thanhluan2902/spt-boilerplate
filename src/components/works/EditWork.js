@@ -5,8 +5,9 @@ import Header from '../header/Header';
 import { connect } from 'react-redux';
 import * as action from './../../actions/index';
 
-const EditWork = ({ match , onRequestWorkEditApi , workEdit }) => {
+const EditWork = ({ match, onRequestWorkEditApi, workEdit }) => {
     const [status, setStatus] = useState(false);
+    const [workItem, setWorkItem] = useState();
 
     var id = match.params.id;
     useEffect(() => {
@@ -16,17 +17,37 @@ const EditWork = ({ match , onRequestWorkEditApi , workEdit }) => {
         fetchWork();
     }, []);
 
+    const handleChange = (e) => {
+        const target = e.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        const formContent = {
+            [name]: value,
+        }
+        setWorkItem(formContent);
+    }
+
+    const handleSubmit = () => {
+        console.log(workItem);
+    }
+
     return (
-        <div className={ status ? "right_wrap no_mr" : "right_wrap" }>
+        <div className={status ? "right_wrap no_mr" : "right_wrap"}>
             <Header onToggleMargin={() => { setStatus(!status) }} />
             <div className="container main_content">
                 <div className="row">
                     <div className="col-3">
                     </div>
                     <div className="col-12">
-                        <form className="mr_bot50">
+                        <form className="mr_bot50" onSubmit={handleSubmit} >
                             <div className="col">
-                                <input type="text" className="form-control" name="email" id="exampleEmail" defaultValue={ workEdit.title } />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="title"
+                                    value={workEdit.title}
+                                    onChange={handleChange}
+                                />
                             </div>
                             <div className="col uploadButton">
                                 <img className="image" src="./../../assets/images/logo512.png" alt="imay" />
@@ -34,7 +55,13 @@ const EditWork = ({ match , onRequestWorkEditApi , workEdit }) => {
                                 <label htmlFor="upload" className="label_upload">Chọn ảnh</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" type="text" defaultValue={ workEdit.amount } name="password" id="examplePassword" />
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    value={workEdit.amount}
+                                    name="amount"
+                                    onChange={handleChange}
+                                />
                             </div>
                             <br />
                             <div className="col mr_bt">
